@@ -1,554 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Tumkur Fixit – AC &amp; Fridge Repair at Your Door</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --ink: #0f2a3d;
-      --bg: #f4f9fb;
-      --card: #fff;
-      --line: #d3e3ea;
-      --cyan: #00899f;
-      --sun: #ffc93c;
-      --sunink: #0f2a3d;
-      --muted: #4b6676;
-      box-sizing: border-box;
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px)
-    }
-
-    @media (prefers-color-scheme:dark) {
-      :root:not([data-theme="light"]) {
-        --ink: #e8f3f7;
-        --bg: #0b1a24;
-        --card: #12293a;
-        --line: #24435a;
-        --cyan: #3cc4dc;
-        --muted: #9bb6c4
-      }
-    }
-
-    :root[data-theme="dark"] {
-      --ink: #e8f3f7;
-      --bg: #0b1a24;
-      --card: #12293a;
-      --line: #24435a;
-      --cyan: #3cc4dc;
-      --muted: #9bb6c4
-    }
-
-    html {
-      scroll-padding-top: env(safe-area-inset-top, 0px)
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-      line-height: 1.55
-    }
-
-    .wrap {
-      max-width: 1020px;
-      margin: 0 auto;
-      padding: 0 20px
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: -.3px
-    }
-
-    .logo span {
-      color: var(--cyan)
-    }
-
-    .wa {
-      background: var(--sun);
-      color: var(--sunink);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 14px
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 36px;
-      padding: 28px 0 56px;
-      align-items: start
-    }
-
-    h1 {
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.04;
-      margin: 0 0 16px;
-      font-weight: 800;
-      letter-spacing: -1.5px
-    }
-
-    .lead {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 46ch;
-      margin: 0 0 22px
-    }
-
-    .trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      font-weight: 600;
-      font-size: 15px
-    }
-
-    .trust li::before {
-      content: "✓ ";
-      color: var(--cyan)
-    }
-
-    .ticket {
-      background: var(--card);
-      border: 2px solid var(--ink);
-      border-radius: 18px;
-      padding: 22px;
-      position: relative
-    }
-
-    .ticket::before,
-    .ticket::after {
-      content: "";
-      position: absolute;
-      top: 62px;
-      width: 18px;
-      height: 18px;
-      background: var(--bg);
-      border: 2px solid var(--ink);
-      border-radius: 50%
-    }
-
-    .ticket::before {
-      left: -11px;
-      clip-path: inset(0 0 0 50%)
-    }
-
-    .ticket::after {
-      right: -11px;
-      clip-path: inset(0 50% 0 0)
-    }
-
-    .ticket h2 {
-      margin: 0 0 4px;
-      font-size: 22px
-    }
-
-    .ticket .sub {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 14px;
-      padding-bottom: 14px;
-      border-bottom: 2px dashed var(--line)
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      font-size: 14px;
-      margin: 12px 0 4px
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      font: inherit;
-      padding: 11px 12px;
-      border-radius: 10px;
-      border: 1.5px solid var(--line);
-      background: var(--bg);
-      color: var(--ink)
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus,
-    button:focus-visible,
-    a:focus-visible {
-      outline: 3px solid var(--cyan);
-      outline-offset: 2px
-    }
-
-    textarea {
-      min-height: 80px;
-      resize: vertical
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px
-    }
-
-    button.book {
-      width: 100%;
-      margin-top: 18px;
-      background: var(--ink);
-      color: var(--bg);
-      font: inherit;
-      font-weight: 800;
-      font-size: 17px;
-      padding: 14px;
-      border: 0;
-      border-radius: 12px;
-      cursor: pointer
-    }
-
-    .note {
-      font-size: 12.5px;
-      color: var(--muted);
-      margin: 10px 0 0;
-      text-align: center
-    }
-
-    .err {
-      color: #c0392b;
-      font-size: 13px;
-      margin: 8px 0 0;
-      min-height: 1em
-    }
-
-    section {
-      padding: 44px 0;
-      border-top: 1px solid var(--line)
-    }
-
-    section h2 {
-      font-size: clamp(26px, 4vw, 36px);
-      letter-spacing: -.8px;
-      margin: 0 0 22px
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px
-    }
-
-    .svc {
-      background: var(--card);
-      border: 1.5px solid var(--line);
-      border-radius: 14px;
-      padding: 16px
-    }
-
-    .svc b {
-      display: block;
-      font-size: 17px;
-      margin-bottom: 2px
-    }
-
-    .svc span {
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      counter-reset: s;
-      padding: 0;
-      list-style: none;
-      margin: 0
-    }
-
-    .steps li {
-      counter-increment: s;
-      padding-left: 50px;
-      position: relative
-    }
-
-    .steps li::before {
-      content: counter(s);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--sun);
-      color: var(--sunink);
-      font-weight: 800;
-      display: grid;
-      place-items: center
-    }
-
-    .steps b {
-      display: block
-    }
-
-    .steps span {
-      color: var(--muted);
-      font-size: 14.5px
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--card);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1.5px solid var(--line)
-    }
-
-    td,
-    th {
-      text-align: left;
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      font-size: 15px
-    }
-
-    th {
-      background: var(--ink);
-      color: var(--bg)
-    }
-
-    .scroll {
-      overflow-x: auto
-    }
-
-    details {
-      background: var(--card);
-      border: 1.5px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 16px;
-      margin-bottom: 10px
-    }
-
-    summary {
-      font-weight: 600;
-      cursor: pointer
-    }
-
-    details p {
-      margin: 8px 0 0;
-      color: var(--muted)
-    }
-
-    .join {
-      background: var(--ink);
-      color: var(--bg);
-      border-radius: 18px;
-      padding: 28px;
-      margin: 10px 0 40px
-    }
-
-    .join h2 {
-      margin: 0 0 8px
-    }
-
-    .join a {
-      color: var(--sun);
-      font-weight: 600
-    }
-
-    footer {
-      padding: 24px 0 36px;
-      color: var(--muted);
-      font-size: 14px;
-      border-top: 1px solid var(--line)
-    }
-
-    @media (max-width:760px) {
-      .hero {
-        grid-template-columns: 1fr
-      }
-
-      .row {
-        grid-template-columns: 1fr
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tumkur Fixit – AC &amp; Fridge Repair at Your Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2a3d;--bg:#f4f9fb;--card:#fff;--line:#d3e3ea;--cyan:#00899f;--sun:#ffc93c;--sunink:#0f2a3d;--muted:#4b6676;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8f3f7;--bg:#0b1a24;--card:#12293a;--line:#24435a;--cyan:#3cc4dc;--muted:#9bb6c4}}
+:root[data-theme="dark"]{--ink:#e8f3f7;--bg:#0b1a24;--card:#12293a;--line:#24435a;--cyan:#3cc4dc;--muted:#9bb6c4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}
+.logo span{color:var(--cyan)}
+.wa{background:var(--sun);color:var(--sunink);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:999px;font-size:14px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding:28px 0 56px;align-items:start}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.04;margin:0 0 16px;font-weight:800;letter-spacing:-1.5px}
+.lead{font-size:18px;color:var(--muted);max-width:46ch;margin:0 0 22px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:0;list-style:none;font-weight:600;font-size:15px}
+.trust li::before{content:"✓ ";color:var(--cyan)}
+.ticket{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:22px;position:relative}
+.ticket::before,.ticket::after{content:"";position:absolute;top:62px;width:18px;height:18px;background:var(--bg);border:2px solid var(--ink);border-radius:50%}
+.ticket::before{left:-11px;clip-path:inset(0 0 0 50%)}
+.ticket::after{right:-11px;clip-path:inset(0 50% 0 0)}
+.ticket h2{margin:0 0 4px;font-size:22px}
+.ticket .sub{margin:0 0 16px;color:var(--muted);font-size:14px;padding-bottom:14px;border-bottom:2px dashed var(--line)}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+textarea{min-height:80px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button.book{width:100%;margin-top:18px;background:var(--ink);color:var(--bg);font:inherit;font-weight:800;font-size:17px;padding:14px;border:0;border-radius:12px;cursor:pointer}
+.note{font-size:12.5px;color:var(--muted);margin:10px 0 0;text-align:center}
+.err{color:#c0392b;font-size:13px;margin:8px 0 0;min-height:1em}
+section{padding:44px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.8px;margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.svc{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px}
+.svc b{display:block;font-size:17px;margin-bottom:2px}
+.svc span{color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;padding-left:50px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--sun);color:var(--sunink);font-weight:800;display:grid;place-items:center}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:14.5px}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;border:1.5px solid var(--line)}
+td,th{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:15px}
+th{background:var(--ink);color:var(--bg)}
+.scroll{overflow-x:auto}
+details{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:8px 0 0;color:var(--muted)}
+.join{background:var(--ink);color:var(--bg);border-radius:18px;padding:28px;margin:10px 0 40px}
+.join h2{margin:0 0 8px}
+.join a{color:var(--sun);font-weight:600}
+footer{padding:24px 0 36px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">Tumkur <span>Fixit</span></div>
-      <a class="wa" id="topwa" href="#book">Book a repair</a>
-    </header>
+<div class="wrap">
+<header>
+  <div class="logo">Tumkur <span>Fixit</span></div>
+  <a class="wa" id="topwa" href="#book">Book a repair</a>
+</header>
 
-    <div class="hero" id="book">
-      <div>
-        <h1>AC or fridge not working? We send a technician to your door.</h1>
-        <p class="lead">Tell us what's wrong. A local, verified technician in Tumkur calls you and fixes it, usually the
-          same day.</p>
-        <ul class="trust">
-          <li>Local technicians</li>
-          <li>Price told upfront</li>
-          <li>Service warranty</li>
-        </ul>
-      </div>
-
-      <form class="ticket" id="f" novalidate>
-        <h2>Book a repair</h2>
-        <p class="sub">Takes 1 minute. We'll confirm on WhatsApp.</p>
-        <label for="name">Your name</label>
-        <input id="name" autocomplete="name" required>
-        <div class="row">
-          <div><label for="phone">Phone number</label><input id="phone" type="tel" inputmode="numeric"
-              autocomplete="tel" placeholder="10-digit number" required></div>
-          <div><label for="svc">What needs repair?</label>
-            <select id="svc">
-              <option>AC</option>
-              <option>Refrigerator</option>
-              <option>Washing machine</option>
-              <option>TV</option>
-              <option>Water purifier</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <label for="area">Area / landmark in Tumkur</label>
-        <input id="area" placeholder="e.g. SS Puram, near bus stand" required>
-        <label for="issue">What's the problem?</label>
-        <textarea id="issue" placeholder="e.g. AC is on but not cooling"></textarea>
-        <label for="slot">Preferred time</label>
-        <select id="slot">
-          <option>As soon as possible</option>
-          <option>Morning (9–12)</option>
-          <option>Afternoon (12–4)</option>
-          <option>Evening (4–7)</option>
-        </select>
-        <p class="err" id="err" role="alert"></p>
-        <button class="book" type="submit">Send booking on WhatsApp</button>
-        <p class="note">No payment now. You pay the technician after the work.</p>
-      </form>
-    </div>
-
-    <section>
-      <h2>What we repair</h2>
-      <div class="grid">
-        <div class="svc"><b>Air conditioner</b><span>Not cooling, gas refill, water leak, servicing</span></div>
-        <div class="svc"><b>Refrigerator</b><span>Not cooling, noise, ice build-up, door seal</span></div>
-        <div class="svc"><b>Washing machine</b><span>Not spinning, drain problems, noise</span></div>
-        <div class="svc"><b>TV and water purifier</b><span>Display or sound issues, filter change</span></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><b>Book</b><span>Fill the form above. It opens WhatsApp with your details ready.</span></li>
-        <li><b>We assign a technician</b><span>A nearby technician accepts and calls you.</span></li>
-        <li><b>Get it fixed</b><span>Agree the price, get the repair done, pay after the work.</span></li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Starting prices</h2>
-      <div class="scroll">
-        <table>
-          <tr>
-            <th>Service</th>
-            <th>Visit and check</th>
-            <th>Typical repair</th>
-          </tr>
-          <tr>
-            <td>AC service</td>
-            <td>₹299</td>
-            <td>From ₹599</td>
-          </tr>
-          <tr>
-            <td>Refrigerator repair</td>
-            <td>₹249</td>
-            <td>From ₹499</td>
-          </tr>
-          <tr>
-            <td>Washing machine repair</td>
-            <td>₹249</td>
-            <td>From ₹449</td>
-          </tr>
-        </table>
-      </div>
-      <p class="note" style="text-align:left">Sample prices. Final price depends on the fault and is told before work
-        starts.</p>
-    </section>
-
-    <section>
-      <h2>Questions</h2>
-      <details>
-        <summary>Do I pay when I book?</summary>
-        <p>No. You pay the technician directly after the repair is done.</p>
-      </details>
-      <details>
-        <summary>How fast will someone come?</summary>
-        <p>We aim to call you within 15 minutes and visit the same day for most bookings.</p>
-      </details>
-      <details>
-        <summary>Is there a warranty?</summary>
-        <p>Yes. Repairs come with a service warranty. Ask your technician for the exact period.</p>
-      </details>
-      <details>
-        <summary>Which parts of Tumkur do you cover?</summary>
-        <p>We are starting across Tumkur city. Mention your area in the form and we'll confirm.</p>
-      </details>
-    </section>
-
-    <div class="join">
-      <h2>Are you a repair technician in Tumkur?</h2>
-      <p>Get customer leads with no joining fee. You only pay a small commission after you earn. <a id="joinwa"
-          href="#">Message us on WhatsApp</a></p>
-    </div>
-
-    <footer>Tumkur Fixit · Tumkur, Karnataka</footer>
+<div class="hero" id="book">
+  <div>
+    <h1>AC or fridge not working? We send a technician to your door.</h1>
+    <p class="lead">Tell us what's wrong. A local, verified technician in Tumkur calls you and fixes it, usually the same day.</p>
+    <ul class="trust">
+      <li>Local technicians</li><li>Price told upfront</li><li>Service warranty</li>
+    </ul>
   </div>
 
-  <script>
-    // CHANGE THESE: your WhatsApp number with country code, no + or spaces
-    var WA_NUMBER = "919380201698";
-    // PASTE your Google Apps Script Web App URL here (see setup steps). Leave empty to skip the sheet.
-    var SHEET_URL = "https://script.google.com/macros/s/AKfycbx26ZAB6wuCVWuhnUBkdHOfcHqgwNmN8-Zgf17BdcEZHVk-lV8DOlLIoes63SvFtO9KqQ/exec";
-    document.getElementById("joinwa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Hi, I'm a repair technician in Tumkur and want to join.");
-    document.getElementById("f").addEventListener("submit", function (e) {
-      e.preventDefault();
-      var v = function (id) { return document.getElementById(id).value.trim() };
-      var err = document.getElementById("err");
-      if (!v("name") || !v("area")) { err.textContent = "Please enter your name and area."; return }
-      if (!/^[6-9]\d{9}$/.test(v("phone").replace(/\D/g, "").slice(-10))) { err.textContent = "Enter a valid 10-digit phone number."; return }
-      err.textContent = "";
-      var msg = "New repair booking\nName: " + v("name") + "\nPhone: " + v("phone") + "\nService: " + v("svc") + "\nArea: " + v("area") + "\nProblem: " + (v("issue") || "Not mentioned") + "\nTime: " + v("slot");
-      if (SHEET_URL) {
-        var body = new URLSearchParams({ name: v("name"), phone: v("phone"), service: v("svc"), area: v("area"), issue: v("issue"), slot: v("slot") });
-        try { fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: body, keepalive: true }); } catch (x) { }
-      }
-      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
-    });
-  </script>
-</body>
+  <form class="ticket" id="f" novalidate>
+    <h2>Book a repair</h2>
+    <p class="sub">Takes 1 minute. We'll confirm on WhatsApp.</p>
+    <label for="name">Your name</label>
+    <input id="name" autocomplete="name" required>
+    <div class="row">
+      <div><label for="phone">Phone number</label><input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" required></div>
+      <div><label for="svc">What needs repair?</label>
+        <select id="svc"><option>AC</option><option>Refrigerator</option><option>Washing machine</option><option>TV</option><option>Water purifier</option><option>Other</option></select></div>
+    </div>
+    <label for="area">Area / landmark in Tumkur</label>
+    <input id="area" placeholder="e.g. SS Puram, near bus stand" required>
+    <label for="issue">What's the problem?</label>
+    <textarea id="issue" placeholder="e.g. AC is on but not cooling"></textarea>
+    <label for="slot">Preferred time</label>
+    <select id="slot"><option>As soon as possible</option><option>Morning (9–12)</option><option>Afternoon (12–4)</option><option>Evening (4–7)</option></select>
+    <p class="err" id="err" role="alert"></p>
+    <button class="book" type="submit">Send booking on WhatsApp</button>
+    <p class="note">No payment now. You pay the technician after the work.</p>
+  </form>
+</div>
 
+<section>
+  <h2>What we repair</h2>
+  <div class="grid">
+    <div class="svc"><b>Air conditioner</b><span>Not cooling, gas refill, water leak, servicing</span></div>
+    <div class="svc"><b>Refrigerator</b><span>Not cooling, noise, ice build-up, door seal</span></div>
+    <div class="svc"><b>Washing machine</b><span>Not spinning, drain problems, noise</span></div>
+    <div class="svc"><b>TV and water purifier</b><span>Display or sound issues, filter change</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Book</b><span>Fill the form above. It opens WhatsApp with your details ready.</span></li>
+    <li><b>We assign a technician</b><span>A nearby technician accepts and calls you.</span></li>
+    <li><b>Get it fixed</b><span>Agree the price, get the repair done, pay after the work.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Starting prices</h2>
+  <div class="scroll"><table>
+    <tr><th>Service</th><th>Visit and check</th><th>Typical repair</th></tr>
+    <tr><td>AC service</td><td>₹299</td><td>From ₹599</td></tr>
+    <tr><td>Refrigerator repair</td><td>₹249</td><td>From ₹499</td></tr>
+    <tr><td>Washing machine repair</td><td>₹249</td><td>From ₹449</td></tr>
+  </table></div>
+  <p class="note" style="text-align:left">Sample prices. Final price depends on the fault and is told before work starts.</p>
+</section>
+
+<section>
+  <h2>Questions</h2>
+  <details><summary>Do I pay when I book?</summary><p>No. You pay the technician directly after the repair is done.</p></details>
+  <details><summary>How fast will someone come?</summary><p>We aim to call you within 15 minutes and visit the same day for most bookings.</p></details>
+  <details><summary>Is there a warranty?</summary><p>Yes. Repairs come with a service warranty. Ask your technician for the exact period.</p></details>
+  <details><summary>Which parts of Tumkur do you cover?</summary><p>We are starting across Tumkur city. Mention your area in the form and we'll confirm.</p></details>
+</section>
+
+<div class="join">
+  <h2>Are you a repair technician in Tumkur?</h2>
+  <p>Get customer leads with no joining fee. You only pay a small commission after you earn. <a id="joinwa" href="#">Message us on WhatsApp</a></p>
+</div>
+
+<footer>Tumkur Fixit · Tumkur, Karnataka</footer>
+</div>
+
+<script>
+// CHANGE THESE: your WhatsApp number with country code, no + or spaces
+var WA_NUMBER = "919380201698";
+// PASTE your Google Apps Script Web App URL here (see setup steps). Leave empty to skip the sheet.
+var SHEET_URL = "https://script.google.com/macros/s/AKfycbx26ZAB6wuCVWuhnUBkdHOfcHqgwNmN8-Zgf17BdcEZHVk-lV8DOlLIoes63SvFtO9KqQ/exec";
+document.getElementById("joinwa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Hi, I'm a repair technician in Tumkur and want to join.");
+document.getElementById("f").addEventListener("submit", function(e){
+  e.preventDefault();
+  var v = function(id){return document.getElementById(id).value.trim()};
+  var err = document.getElementById("err");
+  if(!v("name") || !v("area")){err.textContent="Please enter your name and area.";return}
+  if(!/^[6-9]\d{9}$/.test(v("phone").replace(/\D/g,"").slice(-10))){err.textContent="Enter a valid 10-digit phone number.";return}
+  err.textContent="";
+  var msg = "New repair booking\nName: "+v("name")+"\nPhone: "+v("phone")+"\nService: "+v("svc")+"\nArea: "+v("area")+"\nProblem: "+(v("issue")||"Not mentioned")+"\nTime: "+v("slot");
+  if(SHEET_URL){
+    var body = new URLSearchParams({name:v("name"),phone:v("phone"),service:v("svc"),area:v("area"),issue:v("issue"),slot:v("slot")});
+    try{ fetch(SHEET_URL,{method:"POST",mode:"no-cors",body:body,keepalive:true}); }catch(x){}
+  }
+  window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+</body>
 </html>
