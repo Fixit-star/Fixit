@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fixit Locally – AC & Fridge Repair at Your Door in Tumkur</title>
+  <meta name="description" content="Get fast, local AC, Refrigerator, and Washing Machine repair at your door in Tumkur. Verified technicians, upfront pricing, service warranty.">
+  <link rel="icon" type="image/jpeg" href="/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DPfXa_be.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CbEOCBX1.css">
+</head>
+<body>
+  <!-- 3D Interactive Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="app-wrapper">
+    <!-- Header Navigation -->
+    <header class="header">
+      <a href="#" class="logo-link" id="logo">
+        <img src="/logo.jpg" alt="Fixit - Your Local Repair Team" class="site-logo">
+        <span class="brand-text">
+          <span class="brand-fix">Fix</span><span class="brand-it">it</span>
+          <span class="brand-tag">LOCALLY</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <a class="wa-btn glow-effect" id="topwa" href="#book">
+          <span class="wa-icon">💬</span>
+          <span>Book a Repair</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section with Booking Ticket Form -->
+    <main class="hero-section" id="book">
+      <div class="hero-content">
+        <div class="hero-badge" data-reveal>
+          <span class="star-icon">★</span> Doorstep Repair Service in Tumkur
+        </div>
+        
+        <h1 class="hero-title" data-reveal>
+          <span class="title-line">AC or fridge not working?</span>
+          <span class="title-line gradient-text">We send a technician to your door.</span>
+        </h1>
+
+        <div class="morph-container" data-reveal>
+          <span class="morph-prefix">Specialized in</span>
+          <span class="morph-words" id="morph-words">
+            <span class="active">Air Conditioners</span>
+            <span>Refrigerators</span>
+            <span>Washing Machines</span>
+            <span>Water Purifiers</span>
+          </span>
+        </div>
+
+        <p class="hero-lead" data-reveal>
+          Tell us what's wrong. A local, verified technician in Tumkur calls you and fixes it, usually the same day.
+        </p>
+
+        <ul class="trust-list" data-reveal>
+          <li class="trust-item">
+            <div class="check-box">✓</div>
+            <span>Local verified technicians</span>
+          </li>
+          <li class="trust-item">
+            <div class="check-box">✓</div>
+            <span>Price told upfront</span>
+          </li>
+          <li class="trust-item">
+            <div class="check-box">✓</div>
+            <span>Service warranty included</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Booking Ticket Form Card (Flat / Stationary) -->
+      <div class="ticket-wrapper" id="ticket-card">
+        <div class="ticket-3d-card">
+          <div class="ticket-stub-left"></div>
+          <div class="ticket-stub-right"></div>
+          
+          <div class="ticket-header">
+            <div class="ticket-badge">E-Ticket Pass</div>
+            <h2>Book a Repair</h2>
+            <p class="sub">Takes 1 minute. We'll confirm on WhatsApp.</p>
+          </div>
+
+          <form class="ticket-form" id="f" novalidate>
+            <div class="field-group">
+              <label for="name">Your Name</label>
+              <div class="input-wrapper">
+                <input id="name" placeholder="e.g. Ramesh Kumar" autocomplete="name" required>
+                <span class="input-focus-border"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field-group">
+                <label for="phone">Phone Number</label>
+                <div class="input-wrapper">
+                  <input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" required>
+                  <span class="input-focus-border"></span>
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="svc">What needs repair?</label>
+                <div class="select-wrapper">
+                  <select id="svc">
+                    <option value="AC">AC (Air Conditioner)</option>
+                    <option value="Refrigerator">Refrigerator</option>
+                    <option value="Washing machine">Washing Machine</option>
+                    <option value="Water purifier">Water Purifier</option>
+                    <option value="Other">Other Appliance</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="area">Area / Landmark in Tumkur</label>
+              <div class="input-wrapper">
+                <input id="area" placeholder="e.g. SS Puram, near bus stand" required>
+                <span class="input-focus-border"></span>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="issue">What's the problem?</label>
+              <div class="input-wrapper">
+                <textarea id="issue" placeholder="e.g. AC is on but not cooling, making noise"></textarea>
+                <span class="input-focus-border"></span>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="slot">Preferred Visit Time</label>
+              <div class="select-wrapper">
+                <select id="slot">
+                  <option value="As soon as possible">⚡ As soon as possible (Urgent)</option>
+                  <option value="Morning (9–12)">🌅 Morning (9 AM – 12 PM)</option>
+                  <option value="Afternoon (12–4)">☀️ Afternoon (12 PM – 4 PM)</option>
+                  <option value="Evening (4–7)">🌆 Evening (4 PM – 7 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="err-box" id="err" role="alert"></div>
+
+            <button class="book-btn" type="submit">
+              <span class="btn-shine"></span>
+              <span class="btn-text">Send Booking on WhatsApp</span>
+              <span class="btn-icon">➔</span>
+            </button>
+
+            <p class="note">🔒 No payment now. You pay the technician after the work is done.</p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Interactive Instant Cost Estimator Section -->
+    <section class="calc-section" data-reveal>
+      <div class="section-header center">
+        <span class="section-tag">Instant Quote</span>
+        <h2>Estimate Your Repair Cost</h2>
+        <p>Get a quick estimated cost before you book your technician</p>
+      </div>
+
+      <div class="calc-box box-3d">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <label>Select Appliance:</label>
+            <div class="calc-pill-selector" id="calc-appliance">
+              <button class="pill-btn active" data-val="ac">❄️ AC</button>
+              <button class="pill-btn" data-val="fridge">🧊 Fridge</button>
+              <button class="pill-btn" data-val="wm">🧺 Washer</button>
+              <button class="pill-btn" data-val="purifier">💧 Water Purifier</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <label>Select Issue Type:</label>
+            <select id="calc-issue" class="calc-select">
+              <!-- Options populated by JS -->
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result-card">
+          <div class="result-row">
+            <span>Inspection & Diagnosis Fee:</span>
+            <strong id="calc-visit">₹299</strong>
+          </div>
+          <div class="result-row">
+            <span>Estimated Service/Repair:</span>
+            <strong id="calc-repair">₹599 - ₹899</strong>
+          </div>
+          <div class="result-total">
+            <span>Estimated Total:</span>
+            <h3 id="calc-total">₹898 - ₹1,198</h3>
+          </div>
+          <div class="calc-guarantee">✓ Price locked in after technician inspects & quotes upfront</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Repair Section -->
+    <section class="services-section" data-reveal>
+      <div class="section-header">
+        <span class="section-tag">Services Covered</span>
+        <h2>What we repair</h2>
+        <p>Expert diagnostic & doorstep fix for home appliances in Tumkur</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="svc-card card-3d" data-tilt>
+          <div class="card-glow"></div>
+          <div class="svc-header">
+            <div class="svc-icon-box">❄️</div>
+            <h3>Air Conditioner</h3>
+          </div>
+          <p class="svc-desc">Split & Window AC servicing, deep cleaning, gas refilling, water leak fix, PCB repair.</p>
+          <ul class="svc-tags">
+            <li>Not cooling</li>
+            <li>Gas refill</li>
+            <li>Water leak</li>
+            <li>Servicing</li>
+          </ul>
+        </div>
+
+        <div class="svc-card card-3d" data-tilt>
+          <div class="card-glow"></div>
+          <div class="svc-header">
+            <div class="svc-icon-box">🧊</div>
+            <h3>Refrigerator</h3>
+          </div>
+          <p class="svc-desc">Single & Double door fridge repairs, compressor issues, gas leaks, thermostat & door seals.</p>
+          <ul class="svc-tags">
+            <li>Not cooling</li>
+            <li>Compressor noise</li>
+            <li>Ice build-up</li>
+            <li>Door seal</li>
+          </ul>
+        </div>
+
+        <div class="svc-card card-3d" data-tilt>
+          <div class="card-glow"></div>
+          <div class="svc-header">
+            <div class="svc-icon-box">🧺</div>
+            <h3>Washing Machine</h3>
+          </div>
+          <p class="svc-desc">Front load, top load & semi-automatic washing machine repair, motor & belt replacement.</p>
+          <ul class="svc-tags">
+            <li>Not spinning</li>
+            <li>Drain problems</li>
+            <li>Vibration noise</li>
+            <li>Water intake</li>
+          </ul>
+        </div>
+
+        <div class="svc-card card-3d" data-tilt>
+          <div class="card-glow"></div>
+          <div class="svc-header">
+            <div class="svc-icon-box">💧</div>
+            <h3>Water Purifier</h3>
+          </div>
+          <p class="svc-desc">RO & UV water purifier filter replacement, membrane change, leakage fix, and annual servicing.</p>
+          <ul class="svc-tags">
+            <li>RO Filter change</li>
+            <li>UV Lamp fix</li>
+            <li>Water leakage</li>
+            <li>TDS Adjustment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Step Boxes -->
+    <section class="steps-section" data-reveal>
+      <div class="section-header center">
+        <span class="section-tag">Simple Process</span>
+        <h2>How it works</h2>
+        <p>Get your appliance fixed in 3 easy steps</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card box-3d" data-step="1">
+          <div class="step-badge">01</div>
+          <div class="step-icon">📝</div>
+          <h3>Book Online</h3>
+          <p>Fill the 1-minute form above. It opens WhatsApp with your repair details pre-filled.</p>
+        </div>
+
+        <div class="step-arrow">➔</div>
+
+        <div class="step-card box-3d" data-step="2">
+          <div class="step-badge">02</div>
+          <div class="step-icon">📞</div>
+          <h3>Technician Call</h3>
+          <p>A nearby verified technician in Tumkur accepts your request and calls you within 15 minutes.</p>
+        </div>
+
+        <div class="step-arrow">➔</div>
+
+        <div class="step-card box-3d" data-step="3">
+          <div class="step-badge">03</div>
+          <div class="step-icon">✨</div>
+          <h3>Get it Fixed</h3>
+          <p>Agree on the price upfront, get the work done right at your doorstep, and pay after completion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparent Pricing Table Section -->
+    <section class="pricing-section" data-reveal>
+      <div class="section-header">
+        <span class="section-tag">Transparent Pricing</span>
+        <h2>Starting Prices</h2>
+        <p>No hidden charges. Clear visit fees & upfront estimates.</p>
+      </div>
+
+      <div class="table-wrapper box-3d">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service Category</th>
+              <th>Visit & Inspection</th>
+              <th>Typical Repair</th>
+              <th>Warranty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="table-svc-cell">
+                  <span class="cell-icon">❄️</span>
+                  <strong>AC Service & Repair</strong>
+                </div>
+              </td>
+              <td><span class="price-chip">₹299</span></td>
+              <td>From ₹599</td>
+              <td><span class="tag-chip">30 Days Service</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-svc-cell">
+                  <span class="cell-icon">🧊</span>
+                  <strong>Refrigerator Repair</strong>
+                </div>
+              </td>
+              <td><span class="price-chip">₹249</span></td>
+              <td>From ₹499</td>
+              <td><span class="tag-chip">30 Days Service</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-svc-cell">
+                  <span class="cell-icon">🧺</span>
+                  <strong>Washing Machine Repair</strong>
+                </div>
+              </td>
+              <td><span class="price-chip">₹249</span></td>
+              <td>From ₹449</td>
+              <td><span class="tag-chip">30 Days Service</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-svc-cell">
+                  <span class="cell-icon">💧</span>
+                  <strong>Water Purifier Service</strong>
+                </div>
+              </td>
+              <td><span class="price-chip">₹249</span></td>
+              <td>From ₹399</td>
+              <td><span class="tag-chip">30 Days Service</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pricing-note">💡 Sample prices. Final price depends on the fault and is always confirmed with you before work starts.</p>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" data-reveal>
+      <div class="section-header">
+        <span class="section-tag">Help Center</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our doorstep repair service in Tumkur</p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item box-3d">
+          <summary class="faq-question">
+            <span>Do I pay when I book online?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>No! Booking is completely free. You only pay the technician directly after the repair is completed and tested to your satisfaction.</p>
+          </div>
+        </details>
+
+        <details class="faq-item box-3d">
+          <summary class="faq-question">
+            <span>How fast will a technician arrive at my home?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Our local technicians in Tumkur aim to call you within 15 minutes of booking and usually visit on the same day or at your selected time slot.</p>
+          </div>
+        </details>
+
+        <details class="faq-item box-3d">
+          <summary class="faq-question">
+            <span>Is there a service warranty on repairs?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. All completed repairs come with a standard service warranty. Ask your technician for the exact coverage details for spare parts replaced.</p>
+          </div>
+        </details>
+
+        <details class="faq-item box-3d">
+          <summary class="faq-question">
+            <span>Which parts of Tumkur do you cover?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>We cover all major areas across Tumkur city including SS Puram, Ashok Nagar, Kyathsandra, Batwadi, Gubbi Gate, BH Road, and surrounding localities.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Technician Partner Banner Box -->
+    <div class="join-banner box-3d" data-reveal>
+      <div class="join-content">
+        <div class="join-tag">Technician Network</div>
+        <h2>Are you a repair technician in Tumkur?</h2>
+        <p>Get daily customer repair leads with zero joining fee. You only pay a small commission after you earn from completed jobs.</p>
+      </div>
+      <a id="joinwa" class="join-btn glow-effect" href="#">
+        <span>Message Us on WhatsApp</span>
+        <span class="btn-icon">➔</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img src="/logo.jpg" alt="Fixit Logo" class="footer-logo-img">
+            <span class="brand-text">
+              <span class="brand-fix">Fix</span><span class="brand-it">it</span>
+              <span class="brand-tag">LOCALLY</span>
+            </span>
+          </div>
+          <p>Fast, transparent & doorstep AC & Fridge repair service in Tumkur, Karnataka.</p>
+        </div>
+        <div class="footer-meta">
+          <span>© Fixit Locally · Tumkur, Karnataka</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Floating Sticky WhatsApp CTA Widget -->
+  <a class="floating-wa" id="floatwa" href="#book" title="Book Repair on WhatsApp">
+    <span class="wa-ripple"></span>
+    <span class="floating-wa-icon">💬</span>
+    <span class="floating-wa-tooltip">Book Repair Now</span>
+  </a>
+
+</body>
+</html>
